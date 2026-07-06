@@ -65,6 +65,7 @@ function displayForm($Sender, $Email, $Subject, $Message) {
     <?php
 }
 
+//Default input for each field
 $ShowForm = TRUE;
 $errorCount = 0;
 $Sender = "";
@@ -72,6 +73,7 @@ $Email = "";
 $Subject = "";
 $Message = "";
 
+//Goes through each Validation function when 'Send Form' is selected
 if (isset($_POST['Submit'])) {
     $Sender = validateInput($_POST['Sender'],"Your Name");
     $Email = validateEmail($_POST['Email'],"Your E-mail");
@@ -83,11 +85,17 @@ if (isset($_POST['Submit'])) {
         $ShowForm = TRUE;
 }
 
+//Displays message if any field had invalid input, reloads form
 if ($ShowForm == TRUE) {
     if ($errorCount>0)
         echo "<p>Please re-enter the form information below.</p>\n";
     displayForm($Sender, $Email, $Subject, $Message);
 }
+/*
+Displays 'Thank you' message if each field has no errors
+and successfully sends message,
+displays 'Error' message if failed to send message
+*/
 else {
     $SenderAddress = "$Sender <$Email>";
     $Headers = "From: $SenderAddress\nCC: $SenderAddress\n";
