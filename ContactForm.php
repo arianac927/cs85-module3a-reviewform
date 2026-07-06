@@ -42,6 +42,11 @@ function validateEmail($data, $fieldName) {
     return($retval);
 }
 
+/*
+Display form to the user,
+with 'Clear Form' button to reset form,
+and 'Send Form' button to submit the message
+*/
 function displayForm($Sender, $Email, $Subject, $Message) {
     ?> <h2 style = "text-align:center">Contact Me</h2>
     <form name="contact" action="ContactForm.php" method="post">
