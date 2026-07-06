@@ -23,16 +23,18 @@ function validateInput($data, $fieldName) {
     return($retval);
 }
 
+//Validates email field
 function validateEmail($data, $fieldName) {
     global $errorCount;
-
+    //Displys message if there is no input
     if (empty($data)) {
         echo "\"$fieldName\" is a required field.<br />\n";
         ++$errorCount; $retval = "";
     }
+    //Removes characters not allowed within an email address
     else {
         $retval = filter_var($data, FILTER_SANITIZE_EMAIL);
-
+    //Displays message if email format is invalid
         if (!filter_var($retval, FILTER_VALIDATE_EMAIL)) {
             echo "\"$fieldName\" is not a valid e-mail address.<br />\n";
         }
