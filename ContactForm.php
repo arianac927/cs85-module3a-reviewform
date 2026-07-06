@@ -108,6 +108,29 @@ else {
         echo "<p>There was an error sending your message, " . $Sender . ".</p>\n";
 }
 
+/*
+REFLECTION:
+The main two functions validate user input in each field.
+The 'displayForm' function displays the form to the user.
+Several if/else statements are here to prevent user
+input that may be empty or invalid. There are two buttons
+for the user to either 'Send Form' or 'Clear Form,' which
+function exactly as described. User data is protected with
+the '$_POST' array, which helps to handle sensitive data
+like passwords through its non-repeatability. I was a little
+confused after submitting the form myself as a test run and
+kept receiving an error message within my browser. I genuinely
+don't know if I mistyped something or if there's something
+wrong with the code since the instructions say not to adjust
+anything, so I feel like this could either be improved or
+I've made a mistake somewhere, but I understand what the code
+is supposed to do after typing it out and adding comments. I
+think a copy of the form being sent to the sender is nice to
+give the user confirmation that their form was successfully
+filled out correctly and submitted in order for the user to
+avoid resubmitting sensitive information for no valid reason.
+*/
+
 ?>
     </body>
 </html>
