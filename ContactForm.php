@@ -1,18 +1,21 @@
 <!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Contact Me</title>
-    </head>
+<html lang="en">
+<head>
+    <title>Contact Me</title>
+</head>
     <body>
 <?php
 
+//Validates each input field
 function validateInput($data, $fieldName) {
     global $errorCount;
+    //Displays message if there is no input
     if (empty($data)) {
         echo "\"$fieldName\" is a required field.<br />\n";
         ++$errorCount;
         $retval = "";
     }
+    //Cleans up input by removing unnecessary characters
     else {
         $retval = trim($data);
         $retval = stripslashes($retval);
